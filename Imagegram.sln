@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagegram.API", "Imagegram.API\Imagegram.API.csproj", "{A075AA4D-D572-4186-8D96-8D9D862A9245}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagegram.Application", "Imagegram.Application\Imagegram.Application.csproj", "{3CD41300-681B-4E21-9FAB-D0CF3F56487F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagegram.Domain", "Imagegram.Domain\Imagegram.Domain.csproj", "{F914F065-4461-4F58-AC0C-8AF9101A6173}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagegram.Infrastructure", "Imagegram.Infrastructure\Imagegram.Infrastructure.csproj", "{200FC283-2CEE-417D-B33F-8FDB1607D83E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imagegram.Tests", "Imagegram.Tests\Imagegram.Tests.csproj", "{A5BBD7A2-A319-415A-B05C-B68DB0AE8C5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52BBB8B8-BBA7-4198-ACAE-914F8B01F9F6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A075AA4D-D572-4186-8D96-8D9D862A9245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A075AA4D-D572-4186-8D96-8D9D862A9245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A075AA4D-D572-4186-8D96-8D9D862A9245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A075AA4D-D572-4186-8D96-8D9D862A9245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD41300-681B-4E21-9FAB-D0CF3F56487F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD41300-681B-4E21-9FAB-D0CF3F56487F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD41300-681B-4E21-9FAB-D0CF3F56487F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD41300-681B-4E21-9FAB-D0CF3F56487F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F914F065-4461-4F58-AC0C-8AF9101A6173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F914F065-4461-4F58-AC0C-8AF9101A6173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F914F065-4461-4F58-AC0C-8AF9101A6173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F914F065-4461-4F58-AC0C-8AF9101A6173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200FC283-2CEE-417D-B33F-8FDB1607D83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200FC283-2CEE-417D-B33F-8FDB1607D83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200FC283-2CEE-417D-B33F-8FDB1607D83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200FC283-2CEE-417D-B33F-8FDB1607D83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5BBD7A2-A319-415A-B05C-B68DB0AE8C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BBD7A2-A319-415A-B05C-B68DB0AE8C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BBD7A2-A319-415A-B05C-B68DB0AE8C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BBD7A2-A319-415A-B05C-B68DB0AE8C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F392FDD-6241-4BDD-BE1F-EE0F39E6953E}
+	EndGlobalSection
+EndGlobal
