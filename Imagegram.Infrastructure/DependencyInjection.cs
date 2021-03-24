@@ -1,6 +1,7 @@
 ﻿using Imagegram.Application.Common.Interfaces;
 using Imagegram.Infrastructure.Identity;
 using Imagegram.Infrastructure.Persistence;
+using Imagegram.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +27,8 @@ namespace Imagegram.Infrastructure
 
             services
                 .AddTransient<IIdentityService, IdentityService>();
+            services
+                .AddTransient<IConfigurationService, ConfigurationService>();
 
             services
                 .AddAuthentication(options =>

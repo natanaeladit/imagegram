@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Imagegram.API.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ApiControllerBase

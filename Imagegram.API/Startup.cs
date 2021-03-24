@@ -1,4 +1,10 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Imagegram.API.Filters;
+using Imagegram.API.Services;
 using Imagegram.Application;
+using Imagegram.Application.Common.Interfaces;
+using Imagegram.Application.Posts.Commands.CreatePost;
 using Imagegram.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,7 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace Imagegram.API
 {
@@ -25,6 +34,8 @@ namespace Imagegram.API
             services.AddApplication();
             services.AddInfrastructure(Configuration);
             services.AddControllers();
+            services.AddMvc(options => options.Filters.Add(new ValidationFilter()))
+                .AddFluentValidation();
 
             services.AddSwaggerGen(c =>
             {
@@ -47,7 +58,13 @@ namespace Imagegram.API
                     }}, new List<string>()}
                 });
 
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddSingleton<IUserService, UserService>();
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
