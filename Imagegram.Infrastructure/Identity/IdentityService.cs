@@ -96,7 +96,7 @@ namespace Imagegram.Infrastructure.Identity
             {
                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                new Claim("id", user.Id),
-               new Claim("name", user.Name),
+               new Claim(ClaimTypes.NameIdentifier, user.Name),
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor

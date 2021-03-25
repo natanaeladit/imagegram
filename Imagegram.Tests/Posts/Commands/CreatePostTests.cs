@@ -17,6 +17,21 @@ namespace Imagegram.Tests.Posts.Commands
         [Test]
         public async Task ShouldCreatePost()
         {
+            long postId = await CreatePost();
+            Assert.IsTrue(postId > 0);
+        }
+
+        [Test]
+        public void ShouldRequireMinimumFields()
+        {
+            var command = new CreatePostCommand();
+
+            FluentActions.Invoking(async () =>
+                await SendAsync(command)).Should().Throw<Exception>();
+        }
+
+        public async Task<long> CreatePost()
+        {
             var imageFileMock = new Mock<IFormFile>();
             var bytes = Convert.FromBase64String("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==");
             MemoryStream memoryStream = new MemoryStream(bytes);
@@ -33,17 +48,7 @@ namespace Imagegram.Tests.Posts.Commands
             };
 
             var result = await SendAsync(createPostCmd);
-
-            Assert.IsTrue(result > 0);
-        }
-
-        [Test]
-        public void ShouldRequireMinimumFields()
-        {
-            var command = new CreatePostCommand();
-
-            FluentActions.Invoking(async () =>
-                await SendAsync(command)).Should().Throw<Exception>();
+            return result;
         }
     }
 }

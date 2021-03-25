@@ -17,6 +17,6 @@ namespace Imagegram.API.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public string CurrentUserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        public string CurrentUserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue("id");
     }
 }
