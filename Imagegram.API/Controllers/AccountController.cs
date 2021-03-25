@@ -23,7 +23,7 @@ namespace Imagegram.API.Controllers
         public async Task<ActionResult<CreateAccountVm>> Register([FromBody] CreateAccountCommand createAccount)
         {
             var result = await Mediator.Send(createAccount);
-            return result != null ? Created("", result) : (ActionResult)BadRequest(result);
+            return result?.Result == true ? Created("", result) : (ActionResult)BadRequest(result);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Imagegram.API.Controllers
         public async Task<ActionResult<LoginVm>> Login([FromBody] LoginCommand login)
         {
             var result = await Mediator.Send(login);
-            return result != null ? Created("", result) : (ActionResult)BadRequest(result);
+            return result.Result == true ? Created("", result) : (ActionResult)BadRequest(result);
         }
     }
 }
