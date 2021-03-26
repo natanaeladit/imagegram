@@ -20,10 +20,12 @@ namespace Imagegram.Application.Accounts.Commands.CreateAccount
     public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand, CreateAccountVm>
     {
         private readonly IIdentityService _identityService;
+
         public CreateAccountCommandHandler(IIdentityService identityService)
         {
             _identityService = identityService;
         }
+
         public async Task<CreateAccountVm> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
         {
             CreateAccountVm vm = new CreateAccountVm();

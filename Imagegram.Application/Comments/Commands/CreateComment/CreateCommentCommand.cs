@@ -20,12 +20,14 @@ namespace Imagegram.Application.Comments.Commands.CreateComment
     {
         private readonly IImagegramDbContext _context;
         public readonly IUserService _userService;
+
         public CreateCommentCommandHandler(IImagegramDbContext context,
             IUserService userService)
         {
             _context = context;
             _userService = userService;
         }
+
         public async Task<long> Handle(CreateCommentCommand request, CancellationToken cancellationToken)
         {
             var post = await _context.Posts.FindAsync(request.PostId);

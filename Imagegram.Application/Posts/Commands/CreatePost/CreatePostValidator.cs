@@ -13,6 +13,7 @@ namespace Imagegram.Application.Posts.Commands.CreatePost
     public class CreatePostValidator : AbstractValidator<CreatePostCommand>
     {
         private readonly IConfigurationService _configurationService;
+
         public CreatePostValidator(IConfigurationService configurationService)
         {
             _configurationService = configurationService;

@@ -15,11 +15,13 @@ namespace Imagegram.Application.Posts.Commands.CreatePost
         public IFormFile ImageFile { get; set; }
         public string Comments { get; set; }
     }
+
     public class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, long>
     {
         private readonly IImagegramDbContext _context;
         private readonly IConfigurationService _configurationService;
         public readonly IUserService _userService;
+
         public CreatePostCommandHandler(IImagegramDbContext context,
             IConfigurationService configurationService,
             IUserService userService)
@@ -28,6 +30,7 @@ namespace Imagegram.Application.Posts.Commands.CreatePost
             _configurationService = configurationService;
             _userService = userService;
         }
+
         public async Task<long> Handle(CreatePostCommand request, CancellationToken cancellationToken)
         {
             string folder = Path.Combine(Directory.GetCurrentDirectory(), _configurationService.GetConfig("ImagesFolder"));

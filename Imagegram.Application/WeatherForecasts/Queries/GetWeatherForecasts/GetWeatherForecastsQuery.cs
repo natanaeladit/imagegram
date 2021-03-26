@@ -10,12 +10,14 @@ namespace Imagegram.Application.WeatherForecasts.Queries.GetWeatherForecasts
     public class GetWeatherForecastsQuery : IRequest<IEnumerable<WeatherForecast>>
     {
     }
+
     public class GetWeatherForecastsQueryHandler : IRequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecast>>
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+
         public Task<IEnumerable<WeatherForecast>> Handle(GetWeatherForecastsQuery request, CancellationToken cancellationToken)
         {
             var rng = new Random();

@@ -22,13 +22,16 @@ namespace Imagegram.Application.Comments.Queries.GetCommentsFromPost
         [Required]
         public long PostId { get; set; }
     }
+
     public class RetrieveCommentsFromPostQueryHandler : IRequestHandler<RetrieveCommentsFromPostQuery, PaginatedList<CommentVm>>
     {
         private readonly IImagegramDbContext _context;
+
         public RetrieveCommentsFromPostQueryHandler(IImagegramDbContext context)
         {
             _context = context;
         }
+
         public async Task<PaginatedList<CommentVm>> Handle(RetrieveCommentsFromPostQuery request, CancellationToken cancellationToken)
         {
             var comments = _context.Comments

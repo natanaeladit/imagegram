@@ -17,10 +17,12 @@ namespace Imagegram.Application.Accounts.Commands.Login
     public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginVm>
     {
         private readonly IIdentityService _identityService;
+
         public LoginCommandHandler(IIdentityService identityService)
         {
             _identityService = identityService;
         }
+
         public async Task<LoginVm> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             LoginVm vm = new LoginVm();
