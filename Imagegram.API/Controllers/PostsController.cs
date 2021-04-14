@@ -2,6 +2,7 @@
 using Imagegram.Application.Comments.Queries.GetCommentsFromPost;
 using Imagegram.Application.Common.Interfaces;
 using Imagegram.Application.Posts.Commands.CreatePost;
+using Imagegram.Application.Posts.Queries.GetAllPosts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -71,6 +72,21 @@ namespace Imagegram.API.Controllers
                 PostId = id,
             });
             return Ok(comments);
+        }
+
+        /// <summary>
+        /// Get all posts along with last 3 comments to each post
+        /// </summary>
+        /// <param name="getAllPostsQuery"></param>
+        /// <returns></returns>
+        [Produces("application/json")]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<long>> GetPosts([FromQuery] GetAllPostsQuery getAllPostsQuery)
+        {
+            var posts = await Mediator.Send(getAllPostsQuery);
+            return Ok(posts);
         }
     }
 }
